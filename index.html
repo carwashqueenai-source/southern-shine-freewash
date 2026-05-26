@@ -1,0 +1,399 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Free Car Wash on Us | Southern Shine Express Car Wash</title>
+<meta name="description" content="Get a free car wash at Southern Shine Express, on us. Just text us your info and we'll send you a free wash code right away. Greenville, Spartanburg, and Anderson locations. No membership required." />
+<meta name="color-scheme" content="light" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" />
+<link rel="stylesheet" href="style.css" />
+
+<!-- ─────────────────────────────────────────────────────────────────────
+     Tracking config — same as Pollen landing page, single source of truth
+     for Meta + Google Ads.
+     ───────────────────────────────────────────────────────────────────── -->
+<script>
+window.SS_TRACKING_CONFIG = {
+  ENABLED: true,
+  META_PIXEL_ID: "26802423279384269",
+  GOOGLE_ADS_TAG_ID: "AW-18036476522",
+  GOOGLE_ADS_SIGNUP_CONVERSION: "AW-18036476522/uPv4CMD1jqgcEOqUu5hD",
+};
+</script>
+
+<!-- Meta Pixel base -->
+<script>
+(function(){
+  if (!window.SS_TRACKING_CONFIG || !window.SS_TRACKING_CONFIG.ENABLED) return;
+  !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+  n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+  document,'script','https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', window.SS_TRACKING_CONFIG.META_PIXEL_ID);
+  fbq('track', 'PageView');
+})();
+</script>
+
+<!-- Google Ads / gtag base -->
+<script>
+(function(){
+  if (!window.SS_TRACKING_CONFIG || !window.SS_TRACKING_CONFIG.ENABLED) return;
+  var s = document.createElement('script');
+  s.async = true;
+  s.src = 'https://www.googletagmanager.com/gtag/js?id=' + window.SS_TRACKING_CONFIG.GOOGLE_ADS_TAG_ID;
+  document.head.appendChild(s);
+  window.dataLayer = window.dataLayer || [];
+  window.gtag = function(){ window.dataLayer.push(arguments); };
+  gtag('js', new Date());
+  gtag('config', window.SS_TRACKING_CONFIG.GOOGLE_ADS_TAG_ID);
+})();
+</script>
+
+<style>
+/* ── Free Wash page-specific styling ── */
+.fw-hero { background: linear-gradient(160deg, #31a3d4 0%, #001f59 100%); color:#fff; padding: 4rem 0 5rem; }
+.fw-hero .container { display: grid; grid-template-columns: 1fr; gap: 2.5rem; align-items: center; }
+@media (min-width: 920px) { .fw-hero .container { grid-template-columns: 1.1fr 1fr; gap: 4rem; } }
+.fw-hero-eyebrow { display:inline-block; background:#fbe247; color:#001f59; padding:.4rem .85rem; border-radius:999px; font-weight:800; font-size:.78rem; letter-spacing:.05em; text-transform:uppercase; margin-bottom:1.2rem; }
+.fw-hero h1 { font-size: clamp(2.1rem, 5vw, 3.6rem); font-weight: 900; line-height: 1.05; margin: 0 0 1.2rem; letter-spacing: -.02em; }
+.fw-hero h1 .yellow { color:#fbe247; }
+.fw-hero-lede { font-size: 1.2rem; line-height: 1.55; opacity: .92; margin: 0 0 1.6rem; max-width: 560px; }
+.fw-hero-trust { display:flex; flex-wrap:wrap; gap:1.3rem; font-size:.95rem; opacity:.88; }
+.fw-hero-trust span::before { content:'✓ '; color:#fbe247; font-weight:900; }
+
+/* Form card */
+.fw-card {
+  background:#fff; color:#0f172a; border-radius: 18px; padding: 1.8rem 1.6rem;
+  box-shadow: 0 30px 80px rgba(0, 31, 89, 0.4);
+}
+.fw-card h2 { margin: 0 0 .35rem; font-size: 1.5rem; color:#001f59; font-weight: 800; }
+.fw-card .fw-card-sub { margin: 0 0 1.3rem; color:#5b6678; font-size: .95rem; }
+.fw-row-2 { display: grid; grid-template-columns: 1fr 1fr; gap: .75rem; }
+@media (max-width: 480px) { .fw-row-2 { grid-template-columns: 1fr; } }
+.fw-field { margin-bottom: .85rem; }
+.fw-field label { display:block; font-size:.85rem; font-weight:600; margin-bottom:.3rem; color:#001f59; }
+.fw-field input, .fw-field select {
+  width:100%; padding: 12px 14px; border:1px solid #d1d5db; border-radius:10px;
+  font-size: 16px; color:#0f172a; background:#fff; font-family: inherit;
+}
+.fw-field select { appearance:none; background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'><path fill='%23001f59' d='M6 8L0 0h12z'/></svg>"); background-repeat:no-repeat; background-position:right 14px center; padding-right:36px; }
+.fw-field input:focus, .fw-field select:focus { outline:none; border-color:#31a3d4; box-shadow: 0 0 0 3px rgba(49,163,212,.15); }
+.fw-submit {
+  width:100%; padding: 16px 20px; background:#fbe247; color:#001f59;
+  border:none; border-radius:12px; font-size: 17px; font-weight:800; cursor:pointer;
+  margin-top: .4rem; transition: transform .1s, box-shadow .15s;
+}
+.fw-submit:hover { transform: translateY(-1px); box-shadow: 0 8px 18px rgba(251, 226, 71, .35); }
+.fw-submit:disabled { opacity:.6; cursor:default; transform:none; box-shadow:none; }
+.fw-error { color:#a11d1d; font-size:.9rem; margin-top:.6rem; min-height:1.1em; }
+.fw-fine { font-size: .75rem; line-height: 1.4; color:#5b6678; margin-top: 1rem; }
+
+/* Thanks state */
+.fw-thanks { display:none; text-align:center; padding: 1.5rem .5rem; }
+.fw-thanks.active { display:block; }
+.fw-thanks-check { width: 72px; height: 72px; margin: 0 auto 1rem; border-radius: 50%; background:#fbe247; display:flex; align-items:center; justify-content:center; font-size: 38px; color:#001f59; font-weight: 900; }
+.fw-thanks h2 { color:#001f59; }
+.fw-thanks p { color:#0f172a; font-size: 1rem; }
+.fw-thanks .post-cta { margin-top: 1.8rem; padding-top: 1.4rem; border-top: 1px solid #e5e7eb; }
+.fw-thanks .post-cta p { font-size: .95rem; color:#5b6678; margin-bottom: .8rem; }
+.fw-thanks .post-cta a { display:inline-block; padding: 12px 20px; background:#001f59; color:#fff; border-radius:10px; text-decoration:none; font-weight: 700; }
+
+/* How it works */
+.fw-how { padding: 4rem 0; background: #f8fafc; }
+.fw-how-grid { display: grid; grid-template-columns: 1fr; gap: 1.5rem; margin-top: 2.4rem; }
+@media (min-width: 720px) { .fw-how-grid { grid-template-columns: repeat(3, 1fr); } }
+.fw-how-step {
+  background:#fff; padding: 1.8rem 1.4rem; border-radius: 14px;
+  border: 1px solid #e5e7eb;
+}
+.fw-how-step .num {
+  width: 44px; height: 44px; border-radius: 50%; background:#001f59; color:#fbe247;
+  display:flex; align-items:center; justify-content:center; font-weight: 900;
+  font-size: 1.2rem; margin-bottom: 1rem;
+}
+.fw-how-step h3 { margin: 0 0 .5rem; font-size: 1.15rem; color:#001f59; }
+.fw-how-step p { margin: 0; color:#5b6678; font-size: .95rem; line-height: 1.55; }
+
+/* Locations strip */
+.fw-locations { padding: 3rem 0; }
+.fw-locations h2 { text-align: center; color:#001f59; margin: 0 0 1.6rem; }
+.fw-locations-grid { display:grid; grid-template-columns: 1fr; gap: 1rem; }
+@media (min-width: 640px) { .fw-locations-grid { grid-template-columns: repeat(2, 1fr); } }
+.fw-loc {
+  padding: 1.4rem; border: 1px solid #e5e7eb; border-radius: 12px; background:#fff;
+}
+.fw-loc h3 { margin: 0 0 .3rem; color:#001f59; }
+.fw-loc p { margin: 0; color:#5b6678; font-size: .92rem; }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container header-row">
+    <a class="brand" href="https://southernshineexpresswash.com" aria-label="Southern Shine Express home">
+      <img src="images/logo.png" alt="Southern Shine Express" class="brand-logo" />
+    </a>
+  </div>
+</header>
+
+<main>
+
+  <!-- ── HERO + FORM ──────────────────────────────────────────────── -->
+  <section class="fw-hero">
+    <div class="container">
+      <div class="fw-hero-copy">
+        <span class="fw-hero-eyebrow">On the house</span>
+        <h1>Your next car wash is <span class="yellow">on us.</span></h1>
+        <p class="fw-hero-lede">
+          Drop your info — we'll text you a free wash code in seconds.
+          Drive in, scan, shine. No membership required. No catch.
+        </p>
+        <div class="fw-hero-trust">
+          <span>Greenville, Spartanburg &amp; Anderson</span>
+          <span>Code lasts 7 days</span>
+          <span>5-minute wash, no commitment</span>
+        </div>
+      </div>
+
+      <div class="fw-card" id="formCard">
+        <div class="fw-thanks" id="fw-thanks">
+          <div class="fw-thanks-check">✓</div>
+          <h2 id="fw-thanks-title">You're all set!</h2>
+          <p id="fw-thanks-body">Check your phone — we just texted you your free wash code.</p>
+          <p style="color:#5b6678; font-size:.9rem; margin-top:.6rem;">See you at Southern Shine soon.</p>
+          <div class="post-cta">
+            <p>Love the wash? Make it unlimited.</p>
+            <a href="https://promo.southernshineexpresswash.com/" id="fw-membership-cta">Browse memberships →</a>
+          </div>
+        </div>
+
+        <form id="fw-form" novalidate>
+          <h2>Get your free wash code</h2>
+          <p class="fw-card-sub">Quick form — about 30 seconds.</p>
+
+          <div class="fw-row-2">
+            <div class="fw-field">
+              <label for="fw-first">First Name</label>
+              <input type="text" id="fw-first" name="first_name" autocomplete="given-name" required>
+            </div>
+            <div class="fw-field">
+              <label for="fw-last">Last Name</label>
+              <input type="text" id="fw-last" name="last_name" autocomplete="family-name" required>
+            </div>
+          </div>
+
+          <div class="fw-row-2">
+            <div class="fw-field">
+              <label for="fw-phone">Mobile Phone</label>
+              <input type="tel" id="fw-phone" name="phone" autocomplete="tel" inputmode="tel" required>
+            </div>
+            <div class="fw-field">
+              <label for="fw-email">Email <span style="color:#9ca3af; font-weight:400;">(optional)</span></label>
+              <input type="email" id="fw-email" name="email" autocomplete="email" inputmode="email">
+            </div>
+          </div>
+
+          <div class="fw-field">
+            <label for="fw-plate">License Plate</label>
+            <input type="text" id="fw-plate" name="license_plate" autocapitalize="characters" autocomplete="off" required>
+          </div>
+
+          <div class="fw-field">
+            <label for="fw-location">Which location?</label>
+            <select id="fw-location" name="location" required>
+              <option value="" disabled selected>Pick a location…</option>
+              <option value="CEDAR">Greenville — 108 Cedar Lane Rd</option>
+              <option value="SPAR">Spartanburg — 8174 Warren H Abernathy Hwy</option>
+              <option value="BENTON">Anderson — 4011 Clemson Blvd</option>
+            </select>
+          </div>
+
+          <button type="submit" class="fw-submit" id="fw-submit">Text me my free wash code</button>
+          <div class="fw-error" id="fw-error" role="alert"></div>
+
+          <p class="fw-fine">
+            By submitting you agree to receive recurring automated marketing text messages from Southern Shine Express Wash
+            at the mobile number provided. Consent is not a condition of any purchase. Msg &amp; data rates may apply.
+            Reply STOP to opt out, HELP for help.
+          </p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── HOW IT WORKS ─────────────────────────────────────────────── -->
+  <section class="fw-how">
+    <div class="container">
+      <div class="section-head">
+        <h2>How it works</h2>
+        <p>Three steps. Five minutes total.</p>
+      </div>
+      <div class="fw-how-grid">
+        <div class="fw-how-step">
+          <div class="num">1</div>
+          <h3>Drop your info</h3>
+          <p>Name, mobile, plate, location. About 30 seconds of typing.</p>
+        </div>
+        <div class="fw-how-step">
+          <div class="num">2</div>
+          <h3>Get your code by text</h3>
+          <p>We'll text you a free wash code instantly. Good for 7 days.</p>
+        </div>
+        <div class="fw-how-step">
+          <div class="num">3</div>
+          <h3>Drive in &amp; shine</h3>
+          <p>Show the code at the pay station. Gate opens. Five-minute wash. Done.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── LOCATIONS ────────────────────────────────────────────────── -->
+  <section class="fw-locations">
+    <div class="container">
+      <h2>Where to redeem</h2>
+      <div class="fw-locations-grid">
+        <div class="fw-loc">
+          <h3>Greenville</h3>
+          <p>108 Cedar Lane Rd, Greenville, SC</p>
+          <p style="margin-top:.4rem;">Open 7 days a week</p>
+        </div>
+        <div class="fw-loc">
+          <h3>Spartanburg</h3>
+          <p>8174 Warren H Abernathy Hwy, Spartanburg, SC</p>
+          <p style="margin-top:.4rem;">Open 7 days a week</p>
+        </div>
+        <div class="fw-loc">
+          <h3>Anderson</h3>
+          <p>4011 Clemson Blvd, Anderson, SC</p>
+          <p style="margin-top:.4rem;">Open 7 days a week</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <p style="font-size:.85rem; color:#5b6678;">
+      © 2026 Southern Shine Express Wash · 6 Benton Rd, Travelers Rest, SC ·
+      <a href="https://www.southernshineexpresswash.com/privacy-policy" style="color:#5b6678;">Privacy Policy</a> ·
+      <a href="https://www.southernshineexpresswash.com/about-us" style="color:#5b6678;">About Us</a>
+    </p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  // ── Attribution: capture UTM / gclid / fbclid from URL + persist in sessionStorage
+  function readAttribution() {
+    const params = new URLSearchParams(window.location.search);
+    const attr = {};
+    ["utm_source","utm_medium","utm_campaign","utm_content","utm_term","gclid","fbclid"].forEach(k => {
+      const v = params.get(k);
+      if (v) attr[k] = v;
+    });
+    // First-touch wins — persist if not yet stored
+    if (Object.keys(attr).length > 0 && !sessionStorage.getItem("ss_fw_attr")) {
+      sessionStorage.setItem("ss_fw_attr", JSON.stringify(attr));
+    }
+    const stored = sessionStorage.getItem("ss_fw_attr");
+    if (stored) {
+      try { return Object.assign({}, JSON.parse(stored), attr); } catch (_) {}
+    }
+    attr.referrer = document.referrer || "";
+    attr.landing_page = window.location.href;
+    return attr;
+  }
+
+  // Backend endpoint — Render Flask app
+  const API_BASE = "https://southern-shine-crm.onrender.com";
+  const SIGNUP_ENDPOINT = API_BASE + "/api/text-club/signup";
+
+  const form = document.getElementById("fw-form");
+  const submitBtn = document.getElementById("fw-submit");
+  const errorEl = document.getElementById("fw-error");
+  const thanksEl = document.getElementById("fw-thanks");
+
+  form.addEventListener("submit", async function (ev) {
+    ev.preventDefault();
+    errorEl.textContent = "";
+
+    const fd = new FormData(form);
+    const payload = {
+      first_name: (fd.get("first_name") || "").toString().trim(),
+      last_name:  (fd.get("last_name")  || "").toString().trim(),
+      phone:      (fd.get("phone")      || "").toString().trim(),
+      email:      (fd.get("email")      || "").toString().trim(),
+      license_plate: (fd.get("license_plate") || "").toString().trim().toUpperCase(),
+      location:   (fd.get("location") || "").toString().trim(),
+      source:     "freewash_landing",
+      attribution: readAttribution(),
+    };
+
+    // Basic client validation
+    if (!payload.first_name || !payload.last_name) { errorEl.textContent = "Please enter your full name."; return; }
+    if (!/\d{10}/.test(payload.phone.replace(/\D/g, ""))) { errorEl.textContent = "Please enter a valid 10-digit mobile number."; return; }
+    if (!payload.license_plate) { errorEl.textContent = "Please enter your license plate."; return; }
+    if (!payload.location) { errorEl.textContent = "Please pick a location."; return; }
+
+    submitBtn.disabled = true;
+    const originalLabel = submitBtn.textContent;
+    submitBtn.textContent = "Sending…";
+
+    try {
+      const res = await fetch(SIGNUP_ENDPOINT, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+      const data = await res.json().catch(() => ({}));
+      if (!res.ok) {
+        errorEl.textContent = (data && data.error) || "Something went wrong. Please try again.";
+        submitBtn.disabled = false;
+        submitBtn.textContent = originalLabel;
+        return;
+      }
+
+      // Pixel fire — Lead event (server-side CAPI also fires from Render)
+      if (window.fbq) {
+        try { fbq("track", "Lead", { content_name: "FreeWash" }); } catch (_) {}
+      }
+      if (window.gtag && window.SS_TRACKING_CONFIG.GOOGLE_ADS_SIGNUP_CONVERSION) {
+        try {
+          gtag("event", "conversion", {
+            send_to: window.SS_TRACKING_CONFIG.GOOGLE_ADS_SIGNUP_CONVERSION,
+            transport_type: "beacon",
+          });
+        } catch (_) {}
+      }
+
+      // Show thanks state
+      form.style.display = "none";
+      thanksEl.classList.add("active");
+      // Variant: "resent_existing" / "already_redeemed" reword the message
+      const titleEl = document.getElementById("fw-thanks-title");
+      const bodyEl = document.getElementById("fw-thanks-body");
+      if (data.status === "already_redeemed") {
+        titleEl.textContent = "Looks like you already claimed one!";
+        bodyEl.textContent = data.message || "Thanks for visiting Southern Shine. Keep an eye on your phone for member-only offers.";
+      } else if (data.status === "resent_existing") {
+        titleEl.textContent = "Resent your code!";
+        bodyEl.textContent = "We already had a code for you — just texted it again. Check your phone.";
+      }
+    } catch (err) {
+      errorEl.textContent = "Network error. Check your connection and try again.";
+      submitBtn.disabled = false;
+      submitBtn.textContent = originalLabel;
+    }
+  });
+})();
+</script>
+
+</body>
+</html>
