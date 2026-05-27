@@ -208,8 +208,16 @@ body { background: linear-gradient(160deg, #31a3d4 0%, #001f59 100%); }
   font-size: .72rem;
   text-align: center;
 }
-.site-footer a { color: rgba(255, 255, 255, .85); text-decoration: none; }
-.site-footer a:hover { text-decoration: underline; }
+/* Force footer link font-size/color to match the surrounding text
+   (style.css forces .9rem #c7cfdd which makes them larger + lighter). */
+.site-footer a {
+  color: inherit !important;
+  font-size: inherit !important;
+  font-family: inherit !important;
+  font-weight: inherit !important;
+  text-decoration: none !important;
+}
+.site-footer a:hover { text-decoration: underline !important; }
 
 .container { max-width: 1180px; margin: 0 auto; padding: 0 1.2rem; }
 
