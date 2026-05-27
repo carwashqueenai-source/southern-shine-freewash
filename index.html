@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Free Car Wash on Us | Southern Shine Express Car Wash</title>
-<meta name="description" content="Get a free car wash at Southern Shine Express, on us. Just text us your info and we'll send you a free wash code right away. Travelers Rest, Greenville, and Spartanburg locations. No membership required." />
+<title>Free Ultimate Graphene Wash | Southern Shine Express</title>
+<meta name="description" content="Get a free Ultimate Graphene car wash ($30 value) at Southern Shine Express. Just text us your info and we'll send you a free wash code. Travelers Rest, Greenville & Spartanburg." />
 <meta name="color-scheme" content="light" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -54,86 +54,169 @@ window.SS_TRACKING_CONFIG = {
 </script>
 
 <style>
-/* ── Free Wash page-specific styling ── */
-.fw-hero { background: linear-gradient(160deg, #31a3d4 0%, #001f59 100%); color:#fff; padding: 4rem 0 5rem; }
-.fw-hero .container { display: grid; grid-template-columns: 1fr; gap: 2.5rem; align-items: center; }
-@media (min-width: 920px) { .fw-hero .container { grid-template-columns: 1.1fr 1fr; gap: 4rem; } }
-.fw-hero-eyebrow { display:inline-block; background:#fbe247; color:#001f59; padding:.4rem .85rem; border-radius:999px; font-weight:800; font-size:.78rem; letter-spacing:.05em; text-transform:uppercase; margin-bottom:1.2rem; }
-.fw-hero h1 { font-size: clamp(2.1rem, 5vw, 3.6rem); font-weight: 900; line-height: 1.05; margin: 0 0 1.2rem; letter-spacing: -.02em; }
-.fw-hero h1 .yellow { color:#fbe247; }
-.fw-hero-lede { font-size: 1.2rem; line-height: 1.55; opacity: .92; margin: 0 0 1.6rem; max-width: 560px; }
-.fw-hero-trust { display:flex; flex-wrap:wrap; gap:1.3rem; font-size:.95rem; opacity:.88; }
-.fw-hero-trust span::before { content:'✓ '; color:#fbe247; font-weight:900; }
+/* ── Single-screen Free Wash layout ──
+   Hero contains EVERYTHING. No scroll on a 1440×900 viewport.
+   On mobile, gracefully stacks (value-prop above form). */
 
-/* Form card */
+html, body { margin: 0; padding: 0; }
+body { background: linear-gradient(160deg, #31a3d4 0%, #001f59 100%); }
+
+.site-header { padding: .85rem 0; }
+.site-header .container { display: flex; align-items: center; }
+.site-header .brand-logo { height: 38px; width: auto; filter: brightness(0) invert(1); }
+
+.fw-hero {
+  color: #fff;
+  padding: 1rem 0 1.5rem;
+  min-height: calc(100vh - 70px - 40px); /* viewport minus header + footer */
+  display: flex; align-items: center;
+}
+.fw-hero .container {
+  display: grid; grid-template-columns: 1fr; gap: 1.5rem;
+  align-items: center;
+}
+@media (min-width: 920px) {
+  .fw-hero .container { grid-template-columns: 1.05fr 1fr; gap: 2.5rem; }
+}
+
+/* LEFT: value prop */
+.fw-hero-eyebrow {
+  display: inline-block; background:#fbe247; color:#001f59;
+  padding: .35rem .8rem; border-radius: 999px;
+  font-weight: 800; font-size: .72rem; letter-spacing: .06em;
+  text-transform: uppercase; margin-bottom: .8rem;
+}
+.fw-hero h1 {
+  font-size: clamp(1.9rem, 4.2vw, 2.9rem);
+  font-weight: 900; line-height: 1.05;
+  margin: 0 0 .8rem; letter-spacing: -.02em;
+}
+.fw-hero h1 .yellow { color: #fbe247; }
+.fw-hero-lede {
+  font-size: 1rem; line-height: 1.5;
+  opacity: .92; margin: 0 0 1.1rem; max-width: 560px;
+}
+.fw-features {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: .35rem .9rem; margin: 0 0 1rem; padding: 0;
+  list-style: none; max-width: 540px;
+}
+.fw-features li {
+  font-size: .92rem; line-height: 1.35; opacity: .95;
+  padding-left: 1.3rem; position: relative;
+}
+.fw-features li::before {
+  content: '✓'; position: absolute; left: 0; top: 0;
+  color: #fbe247; font-weight: 900;
+}
+.fw-price-line {
+  display: flex; align-items: baseline; gap: .6rem;
+  margin: 0 0 .3rem;
+}
+.fw-price-line .was {
+  text-decoration: line-through; opacity: .55;
+  font-size: 1.1rem; font-weight: 600;
+}
+.fw-price-line .now {
+  color: #fbe247; font-size: 1.6rem; font-weight: 900;
+  letter-spacing: -.02em;
+}
+.fw-price-line .per { font-size: .85rem; opacity: .8; }
+
+/* RIGHT: form card (compact) */
 .fw-card {
-  background:#fff; color:#0f172a; border-radius: 18px; padding: 1.8rem 1.6rem;
-  box-shadow: 0 30px 80px rgba(0, 31, 89, 0.4);
+  background: #fff; color: #0f172a;
+  border-radius: 16px; padding: 1.4rem 1.3rem;
+  box-shadow: 0 20px 60px rgba(0, 31, 89, 0.35);
 }
-.fw-card h2 { margin: 0 0 .35rem; font-size: 1.5rem; color:#001f59; font-weight: 800; }
-.fw-card .fw-card-sub { margin: 0 0 1.3rem; color:#5b6678; font-size: .95rem; }
-.fw-row-2 { display: grid; grid-template-columns: 1fr 1fr; gap: .75rem; }
+.fw-card h2 {
+  margin: 0 0 .9rem; font-size: 1.25rem;
+  color: #001f59; font-weight: 800;
+}
+.fw-row-2 { display: grid; grid-template-columns: 1fr 1fr; gap: .55rem; }
 @media (max-width: 480px) { .fw-row-2 { grid-template-columns: 1fr; } }
-.fw-field { margin-bottom: .85rem; }
-.fw-field label { display:block; font-size:.85rem; font-weight:600; margin-bottom:.3rem; color:#001f59; }
+.fw-field { margin-bottom: .55rem; }
+.fw-field label {
+  display: block; font-size: .78rem; font-weight: 600;
+  margin-bottom: .2rem; color: #001f59;
+}
 .fw-field input, .fw-field select {
-  width:100%; padding: 12px 14px; border:1px solid #d1d5db; border-radius:10px;
-  font-size: 16px; color:#0f172a; background:#fff; font-family: inherit;
+  width: 100%; padding: 10px 12px;
+  border: 1px solid #d1d5db; border-radius: 9px;
+  font-size: 16px; color: #0f172a; background: #fff; font-family: inherit;
 }
-.fw-field select { appearance:none; background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'><path fill='%23001f59' d='M6 8L0 0h12z'/></svg>"); background-repeat:no-repeat; background-position:right 14px center; padding-right:36px; }
-.fw-field input:focus, .fw-field select:focus { outline:none; border-color:#31a3d4; box-shadow: 0 0 0 3px rgba(49,163,212,.15); }
+.fw-field select {
+  appearance: none;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'><path fill='%23001f59' d='M6 8L0 0h12z'/></svg>");
+  background-repeat: no-repeat; background-position: right 12px center; padding-right: 32px;
+}
+.fw-field input:focus, .fw-field select:focus {
+  outline: none; border-color: #31a3d4;
+  box-shadow: 0 0 0 3px rgba(49, 163, 212, .15);
+}
 .fw-submit {
-  width:100%; padding: 16px 20px; background:#fbe247; color:#001f59;
-  border:none; border-radius:12px; font-size: 17px; font-weight:800; cursor:pointer;
-  margin-top: .4rem; transition: transform .1s, box-shadow .15s;
+  width: 100%; padding: 13px 18px;
+  background: #fbe247; color: #001f59;
+  border: none; border-radius: 11px;
+  font-size: 16px; font-weight: 800; cursor: pointer;
+  margin-top: .3rem;
+  transition: transform .1s, box-shadow .15s;
 }
-.fw-submit:hover { transform: translateY(-1px); box-shadow: 0 8px 18px rgba(251, 226, 71, .35); }
-.fw-submit:disabled { opacity:.6; cursor:default; transform:none; box-shadow:none; }
-.fw-error { color:#a11d1d; font-size:.9rem; margin-top:.6rem; min-height:1.1em; }
-.fw-fine { font-size: .75rem; line-height: 1.4; color:#5b6678; margin-top: 1rem; }
+.fw-submit:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(251, 226, 71, .35);
+}
+.fw-submit:disabled { opacity: .6; cursor: default; transform: none; box-shadow: none; }
+.fw-error { color: #a11d1d; font-size: .85rem; margin-top: .45rem; min-height: 1.05em; }
+.fw-fine { font-size: .68rem; line-height: 1.35; color: #5b6678; margin: .7rem 0 0; }
 
 /* Thanks state */
-.fw-thanks { display:none; text-align:center; padding: 1.5rem .5rem; }
-.fw-thanks.active { display:block; }
-.fw-thanks-check { width: 72px; height: 72px; margin: 0 auto 1rem; border-radius: 50%; background:#fbe247; display:flex; align-items:center; justify-content:center; font-size: 38px; color:#001f59; font-weight: 900; }
-.fw-thanks h2 { color:#001f59; }
-.fw-thanks p { color:#0f172a; font-size: 1rem; }
-.fw-thanks .post-cta { margin-top: 1.8rem; padding-top: 1.4rem; border-top: 1px solid #e5e7eb; }
-.fw-thanks .post-cta p { font-size: .95rem; color:#5b6678; margin-bottom: .8rem; }
-.fw-thanks .post-cta a { display:inline-block; padding: 12px 20px; background:#001f59; color:#fff; border-radius:10px; text-decoration:none; font-weight: 700; }
+.fw-thanks { display: none; text-align: center; padding: 1.2rem .4rem; }
+.fw-thanks.active { display: block; }
+.fw-thanks-check {
+  width: 60px; height: 60px; margin: 0 auto .9rem;
+  border-radius: 50%; background: #fbe247;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 32px; color: #001f59; font-weight: 900;
+}
+.fw-thanks h2 { color: #001f59; margin: 0 0 .4rem; font-size: 1.2rem; }
+.fw-thanks p { color: #0f172a; font-size: .95rem; margin: 0 0 .5rem; }
+.fw-thanks .post-cta {
+  margin-top: 1.4rem; padding-top: 1.1rem;
+  border-top: 1px solid #e5e7eb;
+}
+.fw-thanks .post-cta p { font-size: .9rem; color: #5b6678; margin-bottom: .7rem; }
+.fw-thanks .post-cta a {
+  display: inline-block; padding: 10px 18px;
+  background: #001f59; color: #fff; border-radius: 9px;
+  text-decoration: none; font-weight: 700; font-size: .95rem;
+}
 
-/* How it works */
-.fw-how { padding: 4rem 0; background: #f8fafc; }
-.fw-how-grid { display: grid; grid-template-columns: 1fr; gap: 1.5rem; margin-top: 2.4rem; }
-@media (min-width: 720px) { .fw-how-grid { grid-template-columns: repeat(3, 1fr); } }
-.fw-how-step {
-  background:#fff; padding: 1.8rem 1.4rem; border-radius: 14px;
-  border: 1px solid #e5e7eb;
+/* Footer (minimal, single line) */
+.site-footer {
+  background: rgba(0, 0, 0, .15);
+  padding: .7rem 0;
+  color: rgba(255, 255, 255, .65);
+  font-size: .72rem;
+  text-align: center;
 }
-.fw-how-step .num {
-  width: 44px; height: 44px; border-radius: 50%; background:#001f59; color:#fbe247;
-  display:flex; align-items:center; justify-content:center; font-weight: 900;
-  font-size: 1.2rem; margin-bottom: 1rem;
-}
-.fw-how-step h3 { margin: 0 0 .5rem; font-size: 1.15rem; color:#001f59; }
-.fw-how-step p { margin: 0; color:#5b6678; font-size: .95rem; line-height: 1.55; }
+.site-footer a { color: rgba(255, 255, 255, .85); text-decoration: none; }
+.site-footer a:hover { text-decoration: underline; }
 
-/* Locations strip */
-.fw-locations { padding: 3rem 0; }
-.fw-locations h2 { text-align: center; color:#001f59; margin: 0 0 1.6rem; }
-.fw-locations-grid { display:grid; grid-template-columns: 1fr; gap: 1rem; }
-@media (min-width: 640px) { .fw-locations-grid { grid-template-columns: repeat(2, 1fr); } }
-.fw-loc {
-  padding: 1.4rem; border: 1px solid #e5e7eb; border-radius: 12px; background:#fff;
+.container { max-width: 1180px; margin: 0 auto; padding: 0 1.2rem; }
+
+/* Mobile: reduce min-height so form is visible without huge scroll */
+@media (max-width: 919px) {
+  .fw-hero { min-height: auto; padding: 1.5rem 0 2rem; }
+  .fw-features { grid-template-columns: 1fr 1fr; gap: .25rem .8rem; }
+  .fw-hero h1 { font-size: 1.7rem; }
 }
-.fw-loc h3 { margin: 0 0 .3rem; color:#001f59; }
-.fw-loc p { margin: 0; color:#5b6678; font-size: .92rem; }
 </style>
 </head>
 <body>
 
 <header class="site-header">
-  <div class="container header-row">
+  <div class="container">
     <a class="brand" href="https://southernshineexpresswash.com" aria-label="Southern Shine Express home">
       <img src="images/logo.png" alt="Southern Shine Express" class="brand-logo" />
     </a>
@@ -141,31 +224,42 @@ window.SS_TRACKING_CONFIG = {
 </header>
 
 <main>
-
-  <!-- ── HERO + FORM ──────────────────────────────────────────────── -->
   <section class="fw-hero">
     <div class="container">
+
+      <!-- LEFT: value prop -->
       <div class="fw-hero-copy">
-        <span class="fw-hero-eyebrow">$45 value · on us</span>
-        <h1>A free <span class="yellow">Ultimate Graphene</span> car wash.</h1>
+        <span class="fw-hero-eyebrow">$30 value · on us</span>
+        <h1>A free <span class="yellow">Ultimate Graphene</span> wash.</h1>
         <p class="fw-hero-lede">
-          Our <b>top-tier wash</b> — the same one members pay <b>$45</b> for —
-          yours free, on us. Drop your info, we'll text you the code in seconds.
-          No membership required. No catch.
+          Our top-tier wash — the one members pay <b>$30</b> for — yours free.
+          No membership. No catch.
         </p>
-        <div class="fw-hero-trust">
-          <span>Travelers Rest, Greenville &amp; Spartanburg</span>
-          <span>$45 retail value</span>
-          <span>Code lasts 7 days · No commitment</span>
+        <div class="fw-price-line">
+          <span class="was">$30</span>
+          <span class="now">FREE</span>
+          <span class="per">this visit</span>
         </div>
+        <ul class="fw-features">
+          <li>Graphene Armor Coating (x4)</li>
+          <li>Shine Shield Paint Seal</li>
+          <li>Ceramic Shine</li>
+          <li>Tire Shine · Wheel Clean</li>
+          <li>Underbody Rinse</li>
+          <li>Bug Prep · Rain Repellent</li>
+          <li>Hot Wax</li>
+          <li>Code lasts 7 days</li>
+        </ul>
       </div>
 
+      <!-- RIGHT: form -->
       <div class="fw-card" id="formCard">
+
         <div class="fw-thanks" id="fw-thanks">
           <div class="fw-thanks-check">✓</div>
           <h2 id="fw-thanks-title">You're all set!</h2>
           <p id="fw-thanks-body">Check your phone — we just texted you your free wash code.</p>
-          <p style="color:#5b6678; font-size:.9rem; margin-top:.6rem;">See you at Southern Shine soon.</p>
+          <p style="color:#5b6678; font-size:.85rem; margin-top:.5rem;">See you at Southern Shine soon.</p>
           <div class="post-cta">
             <p>Love the wash? Make it unlimited.</p>
             <a href="https://promo.southernshineexpresswash.com/" id="fw-membership-cta">Browse memberships →</a>
@@ -174,7 +268,6 @@ window.SS_TRACKING_CONFIG = {
 
         <form id="fw-form" novalidate>
           <h2>Get your free wash code</h2>
-          <p class="fw-card-sub">Quick form — about 30 seconds.</p>
 
           <div class="fw-row-2">
             <div class="fw-field">
@@ -213,122 +306,25 @@ window.SS_TRACKING_CONFIG = {
             </select>
           </div>
 
-          <button type="submit" class="fw-submit" id="fw-submit">Text me my free wash code</button>
+          <button type="submit" id="fw-submit" class="fw-submit">Text me my free wash code</button>
           <div class="fw-error" id="fw-error" role="alert"></div>
 
           <p class="fw-fine">
             By submitting you agree to receive recurring automated marketing text messages from Southern Shine Express Wash
-            at the mobile number provided. Consent is not a condition of any purchase. Msg &amp; data rates may apply.
-            Reply STOP to opt out, HELP for help.
+            at the mobile number provided. Reply STOP to opt out, HELP for help. Msg &amp; data rates may apply.
           </p>
         </form>
       </div>
+
     </div>
   </section>
-
-  <!-- ── WHAT'S INCLUDED (Ultimate Graphene details) ─────────────────
-       Same card layout + same feature list as the Pollen Season Ultimate
-       Graphene tier on promo.southernshineexpresswash.com, so customers
-       see exactly what the $45 wash includes.
-       ─────────────────────────────────────────────────────────────── -->
-  <section class="fw-included" style="background:#f6f8fb; padding: 3.5rem 0;">
-    <div class="container">
-      <div class="section-head" style="text-align:center; margin-bottom: 2rem;">
-        <h2 style="font-size: clamp(1.7rem, 4vw, 2.4rem); color:#001f59; margin: 0 0 .6rem;">What's in your free wash</h2>
-        <p style="color:#5b6678; font-size: 1.05rem; max-width: 620px; margin: 0 auto;">
-          We're giving away our most expensive wash — the <b>Ultimate Graphene</b>.
-          Members pay <b>$45/mo</b> for it. You get one for free.
-        </p>
-      </div>
-
-      <div style="max-width: 460px; margin: 0 auto;">
-        <article class="card card-tier card-graphene card-featured">
-          <span class="badge-corner badge-popular">$45 Value</span>
-          <div class="tier-icon">
-            <img src="images/graphene-icon.png" alt="Graphene Armor Coating x4" />
-          </div>
-          <h4>Ultimate Graphene</h4>
-          <span class="chip chip-incl">Our best wash — includes everything</span>
-          <p class="price" style="margin-top: 1rem;">
-            <span class="was" aria-label="Regular member price">$45</span>
-            <span class="amount" style="color:#fbe247;">FREE</span><span class="per">/this visit</span>
-          </p>
-          <p class="who">Our longest-lasting protection with our highest level of shine and durability. One wash, no membership, no commitment.</p>
-          <ul class="feature-list">
-            <li>Graphene Armor Coating (x4)</li>
-            <li>Shine Shield Paint Seal</li>
-            <li>Ceramic Shine</li>
-            <li>Tire Shine · Wheel Clean</li>
-            <li>Underbody Rinse</li>
-            <li>Bug Prep · Rain Repellent</li>
-            <li>Hot Wax</li>
-          </ul>
-          <p class="fineprint" style="text-align:center; margin-top: 1rem;">Code lasts 7 days · Redeem at any of our 3 locations</p>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- ── HOW IT WORKS ─────────────────────────────────────────────── -->
-  <section class="fw-how">
-    <div class="container">
-      <div class="section-head">
-        <h2>How it works</h2>
-        <p>Three steps. Five minutes total.</p>
-      </div>
-      <div class="fw-how-grid">
-        <div class="fw-how-step">
-          <div class="num">1</div>
-          <h3>Drop your info</h3>
-          <p>Name, mobile, plate, location. About 30 seconds of typing.</p>
-        </div>
-        <div class="fw-how-step">
-          <div class="num">2</div>
-          <h3>Get your code by text</h3>
-          <p>We'll text you a free wash code instantly. Good for 7 days.</p>
-        </div>
-        <div class="fw-how-step">
-          <div class="num">3</div>
-          <h3>Drive in &amp; shine</h3>
-          <p>Show the code at the pay station. Gate opens. Five-minute wash. Done.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ── LOCATIONS ────────────────────────────────────────────────── -->
-  <section class="fw-locations">
-    <div class="container">
-      <h2>Where to redeem</h2>
-      <div class="fw-locations-grid">
-        <div class="fw-loc">
-          <h3>Travelers Rest</h3>
-          <p>6 Benton Rd, Travelers Rest, SC</p>
-          <p style="margin-top:.4rem;">Open 7 days a week</p>
-        </div>
-        <div class="fw-loc">
-          <h3>Greenville</h3>
-          <p>108 Cedar Lane Rd, Greenville, SC</p>
-          <p style="margin-top:.4rem;">Open 7 days a week</p>
-        </div>
-        <div class="fw-loc">
-          <h3>Spartanburg</h3>
-          <p>8174 Warren H Abernathy Hwy, Spartanburg, SC</p>
-          <p style="margin-top:.4rem;">Open 7 days a week</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
 </main>
 
 <footer class="site-footer">
   <div class="container">
-    <p style="font-size:.85rem; color:#5b6678;">
-      © 2026 Southern Shine Express Wash · 6 Benton Rd, Travelers Rest, SC ·
-      <a href="https://www.southernshineexpresswash.com/privacy-policy" style="color:#5b6678;">Privacy Policy</a> ·
-      <a href="https://www.southernshineexpresswash.com/about-us" style="color:#5b6678;">About Us</a>
-    </p>
+    © 2026 Southern Shine Express Wash · 6 Benton Rd, Travelers Rest, SC ·
+    <a href="https://www.southernshineexpresswash.com/about-us">About</a> ·
+    <a href="https://www.southernshineexpresswash.com/privacy-policy">Privacy</a>
   </div>
 </footer>
 
