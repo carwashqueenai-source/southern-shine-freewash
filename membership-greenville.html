@@ -1,0 +1,327 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Lock in Unlimited Washes — Greenville | Southern Shine Express</title>
+<meta name="description" content="Your free wash is on its way. Lock in unlimited washes at our Greenville Cedar Lane location — Ultimate, Best, Good, or Basic from $25/mo. Cancel anytime." />
+<meta name="color-scheme" content="light" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" />
+<link rel="stylesheet" href="style.css" />
+
+<!-- Tracking config (same as Free Wash page) -->
+<script>
+window.SS_TRACKING_CONFIG = {
+  ENABLED: true,
+  META_PIXEL_ID: "26802423279384269",
+  GOOGLE_ADS_TAG_ID: "AW-18036476522",
+};
+</script>
+
+<!-- Meta Pixel -->
+<script>
+(function(){
+  if (!window.SS_TRACKING_CONFIG || !window.SS_TRACKING_CONFIG.ENABLED) return;
+  !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+  n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+  document,'script','https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', window.SS_TRACKING_CONFIG.META_PIXEL_ID);
+  fbq('track', 'PageView');
+})();
+</script>
+
+<!-- Google gtag -->
+<script>
+(function(){
+  if (!window.SS_TRACKING_CONFIG || !window.SS_TRACKING_CONFIG.ENABLED) return;
+  var s = document.createElement('script');
+  s.async = true;
+  s.src = 'https://www.googletagmanager.com/gtag/js?id=' + window.SS_TRACKING_CONFIG.GOOGLE_ADS_TAG_ID;
+  document.head.appendChild(s);
+  window.dataLayer = window.dataLayer || [];
+  window.gtag = function(){ window.dataLayer.push(arguments); };
+  gtag('js', new Date());
+  gtag('config', window.SS_TRACKING_CONFIG.GOOGLE_ADS_TAG_ID);
+})();
+</script>
+
+<style>
+/* Greenville variant — identical styling to membership.html, only the
+   plan grid contents (Basic instead of Better) differ. Any visual tweak
+   should be mirrored across both files. */
+html, body { margin: 0; padding: 0; }
+body {
+  background: linear-gradient(160deg, #31a3d4 0%, #001f59 100%);
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  color: #fff;
+  min-height: 100vh;
+}
+
+.site-header {
+  padding: .7rem 0 !important;
+  background: transparent !important;
+  border-bottom: none !important;
+  position: relative !important;
+}
+.site-header .container { display: flex; align-items: center; }
+.site-header .brand-logo { height: 88px; width: auto; }
+@media (max-width: 919px) { .site-header .brand-logo { height: 64px; } }
+
+.container { max-width: 1180px; margin: 0 auto; padding: 0 1.2rem; }
+
+.mb-hero { text-align: center; padding: 1.4rem 0 2.2rem; }
+.mb-hero-eyebrow {
+  display: inline-block; background: #fbe247; color: #001f59;
+  padding: .35rem .85rem; border-radius: 999px;
+  font-weight: 800; font-size: .72rem; letter-spacing: .06em;
+  text-transform: uppercase; margin-bottom: .9rem;
+}
+.mb-hero h1 {
+  font-size: clamp(2rem, 4.5vw, 3.2rem);
+  font-weight: 900; line-height: 1.05;
+  margin: 0 0 .8rem; letter-spacing: -.02em;
+}
+.mb-hero h1 .yellow { color: #fbe247; }
+.mb-hero p {
+  font-size: 1.08rem; line-height: 1.5;
+  opacity: .92; margin: 0 auto; max-width: 640px;
+}
+
+.mb-plans { padding-bottom: 3rem; }
+.mb-plans-grid {
+  display: grid; grid-template-columns: 1fr; gap: 1.1rem;
+  max-width: 1080px; margin: 0 auto;
+}
+@media (min-width: 720px) { .mb-plans-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1024px) { .mb-plans-grid { grid-template-columns: repeat(4, 1fr); } }
+
+.mb-plan {
+  background: #fff; color: #0f172a;
+  border-radius: 16px; padding: 1.5rem 1.2rem 1.3rem;
+  box-shadow: 0 14px 38px rgba(0, 31, 89, 0.32);
+  display: flex; flex-direction: column;
+  position: relative;
+  transition: transform .15s, box-shadow .2s;
+}
+.mb-plan:hover { transform: translateY(-3px); box-shadow: 0 20px 46px rgba(0, 31, 89, 0.40); }
+.mb-plan.featured { background: #fff; outline: 3px solid #fbe247; outline-offset: -3px; }
+.mb-plan-badge {
+  position: absolute; top: -.6rem; right: 1rem;
+  background: #fbe247; color: #001f59;
+  padding: .25rem .65rem; border-radius: 999px;
+  font-size: .68rem; font-weight: 800; letter-spacing: .04em;
+  text-transform: uppercase;
+}
+.mb-plan h3 { margin: 0 0 .35rem; font-size: 1.25rem; color: #001f59; font-weight: 800; }
+.mb-plan .price { margin: .35rem 0 .8rem; font-size: 1.05rem; }
+.mb-plan .price .amount { font-size: 2.1rem; font-weight: 900; color: #001f59; letter-spacing: -.02em; }
+.mb-plan .price .per { font-size: .9rem; color: #5b6678; margin-left: .15rem; }
+.mb-plan .who { font-size: .87rem; color: #5b6678; margin: 0 0 .9rem; line-height: 1.4; min-height: 2.5em; }
+.mb-plan ul { list-style: none; padding: 0; margin: 0 0 1.1rem; font-size: .9rem; line-height: 1.5; flex-grow: 1; }
+.mb-plan ul li { padding-left: 1.4rem; position: relative; margin-bottom: .25rem; }
+.mb-plan ul li::before { content: '✓'; position: absolute; left: 0; top: 0; color: #31a3d4; font-weight: 900; }
+.mb-plan .cta {
+  display: block; text-align: center;
+  background: #fbe247; color: #001f59;
+  padding: 12px 16px; border-radius: 11px;
+  font-size: .95rem; font-weight: 800;
+  text-decoration: none; cursor: pointer;
+  border: none; font-family: inherit; width: 100%;
+  transition: transform .1s, box-shadow .15s;
+}
+.mb-plan .cta:hover { transform: translateY(-1px); box-shadow: 0 6px 14px rgba(251, 226, 71, .35); }
+.mb-plan .fineprint { font-size: .72rem; color: #9ca3af; text-align: center; margin: .6rem 0 0; }
+
+.mb-reassure {
+  background: rgba(255, 255, 255, .07);
+  padding: 1.8rem 0; margin-bottom: 1.5rem;
+}
+.mb-reassure-grid { display: grid; grid-template-columns: 1fr; gap: 1.2rem; text-align: center; }
+@media (min-width: 720px) { .mb-reassure-grid { grid-template-columns: repeat(3, 1fr); } }
+.mb-reassure h4 { font-size: .95rem; font-weight: 700; margin: 0 0 .3rem; color: #fbe247; }
+.mb-reassure p { font-size: .88rem; line-height: 1.5; margin: 0; opacity: .9; }
+
+.site-footer {
+  background: rgba(0, 0, 0, .15);
+  padding: .8rem 0;
+  color: rgba(255, 255, 255, .55);
+  font-size: .72rem; text-align: center;
+}
+.site-footer a, .site-footer a:link, .site-footer a:visited {
+  color: inherit !important; font-size: inherit !important;
+  text-decoration: none !important;
+}
+.site-footer a:hover { text-decoration: underline !important; }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <a class="brand" href="https://southernshineexpresswash.com" aria-label="Southern Shine Express home">
+      <img src="images/logo.png" alt="Southern Shine Express" class="brand-logo" />
+    </a>
+  </div>
+</header>
+
+<main>
+  <section class="mb-hero">
+    <div class="container">
+      <span class="mb-hero-eyebrow">Greenville · 108 Cedar Lane Rd</span>
+      <h1>Lock in <span class="yellow">unlimited washes</span> from $25/mo.</h1>
+      <p>One flat monthly rate at our Greenville location. Drive in any day, as many times as you want. Cancel anytime — no contracts, no hidden fees.</p>
+    </div>
+  </section>
+
+  <section class="mb-plans">
+    <div class="container">
+      <div class="mb-plans-grid">
+
+        <!-- BASIC (Greenville-only) -->
+        <article class="mb-plan">
+          <h3>Basic</h3>
+          <p class="price"><span class="amount">$25</span><span class="per">/mo</span></p>
+          <p class="who">A simple, fast wash for everyday driving.</p>
+          <ul>
+            <li>Soft-touch wash</li>
+            <li>Spot-free rinse</li>
+            <li>Tire shine</li>
+          </ul>
+          <!--
+            TODO: replace data-sonnys-url="" with the Sonny's checkout URL for
+                  the Basic plan (Greenville only, $25/mo). Greenville offers
+                  this tier; Travelers Rest and Spartanburg do not.
+          -->
+          <a href="#" class="cta js-start-membership"
+             data-plan-slug="basic-standard-greenville"
+             data-plan-name="Basic"
+             data-plan-price="25"
+             data-plan-location="CEDAR"
+             data-sonnys-url="">Start Basic Membership</a>
+          <p class="fineprint">Secure payment · Cancel anytime</p>
+        </article>
+
+        <!-- GOOD -->
+        <article class="mb-plan">
+          <h3>Good</h3>
+          <p class="price"><span class="amount">$30</span><span class="per">/mo</span></p>
+          <p class="who">A reliable wash with bug prep for the daily driver.</p>
+          <ul>
+            <li>Soft-touch wash</li>
+            <li>Spot-free rinse</li>
+            <li>Tire shine</li>
+            <li>Bug prep</li>
+          </ul>
+          <a href="#" class="cta js-start-membership"
+             data-plan-slug="good-standard-greenville"
+             data-plan-name="Good"
+             data-plan-price="30"
+             data-plan-location="CEDAR"
+             data-sonnys-url="">Start Good Membership</a>
+          <p class="fineprint">Secure payment · Cancel anytime</p>
+        </article>
+
+        <!-- BEST -->
+        <article class="mb-plan">
+          <h3>Best</h3>
+          <p class="price"><span class="amount">$35</span><span class="per">/mo</span></p>
+          <p class="who">Spot-free finish with ceramic protection for weekly drivers.</p>
+          <ul>
+            <li>Ceramic Shine</li>
+            <li>Shine Shield Paint Seal</li>
+            <li>Tire Shine · Wheel Clean</li>
+            <li>Underbody Rinse</li>
+            <li>Bug Prep · Rain Repellent</li>
+          </ul>
+          <a href="#" class="cta js-start-membership"
+             data-plan-slug="best-standard-greenville"
+             data-plan-name="Best"
+             data-plan-price="35"
+             data-plan-location="CEDAR"
+             data-sonnys-url="">Start Best Membership</a>
+          <p class="fineprint">Secure payment · Cancel anytime</p>
+        </article>
+
+        <!-- ULTIMATE (featured) -->
+        <article class="mb-plan featured">
+          <span class="mb-plan-badge">Most Popular</span>
+          <h3>Ultimate Graphene</h3>
+          <p class="price"><span class="amount">$37</span><span class="per">/mo</span></p>
+          <p class="who">Our longest-lasting protection with our highest shine.</p>
+          <ul>
+            <li>Graphene Armor Coating (x4)</li>
+            <li>Shine Shield Paint Seal</li>
+            <li>Ceramic Shine</li>
+            <li>Tire Shine · Wheel Clean</li>
+            <li>Underbody Rinse</li>
+            <li>Bug Prep · Rain Repellent</li>
+            <li>Hot Wax</li>
+          </ul>
+          <a href="#" class="cta js-start-membership"
+             data-plan-slug="ultimate-standard-greenville"
+             data-plan-name="Ultimate Graphene"
+             data-plan-price="37"
+             data-plan-location="CEDAR"
+             data-sonnys-url="">Start Ultimate Membership</a>
+          <p class="fineprint">Secure payment · Cancel anytime</p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="mb-reassure">
+    <div class="container">
+      <div class="mb-reassure-grid">
+        <div>
+          <h4>Cancel anytime</h4>
+          <p>No contracts, no cancellation fees. Manage your plan online in seconds.</p>
+        </div>
+        <div>
+          <h4>Use it at all 3 locations</h4>
+          <p>Your membership works at Travelers Rest, Greenville, and Spartanburg.</p>
+        </div>
+        <div>
+          <h4>Drive in any day</h4>
+          <p>Unlimited monthly washes — come back as often as you want.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    © 2026 Southern Shine Express Wash · 108 Cedar Lane Rd, Greenville, SC ·
+    <a href="https://www.southernshineexpresswash.com/about-us">About</a> ·
+    <a href="https://www.southernshineexpresswash.com/privacy-policy">Privacy</a>
+  </div>
+</footer>
+
+<script>
+document.querySelectorAll('.js-start-membership').forEach(el => {
+  el.addEventListener('click', function(ev) {
+    ev.preventDefault();
+    const url = this.getAttribute('data-sonnys-url') || '';
+    const plan = this.getAttribute('data-plan-name') || 'this plan';
+    const price = this.getAttribute('data-plan-price') || '';
+
+    if (window.fbq) {
+      try { fbq('track', 'InitiateCheckout', { content_name: plan, value: parseFloat(price), currency: 'USD' }); } catch (_) {}
+    }
+
+    if (url && url.trim()) {
+      window.location.href = url;
+    } else {
+      alert(`Thanks for picking ${plan}! Checkout for this plan is being set up — call us at (864) 263-1077 to start your membership today, or visit any of our 3 locations.`);
+    }
+  });
+});
+</script>
+
+</body>
+</html>
