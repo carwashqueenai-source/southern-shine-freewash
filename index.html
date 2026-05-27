@@ -61,9 +61,16 @@ window.SS_TRACKING_CONFIG = {
 html, body { margin: 0; padding: 0; }
 body { background: linear-gradient(160deg, #31a3d4 0%, #001f59 100%); }
 
-.site-header { padding: .85rem 0; }
+/* Override .site-header from style.css (which gives it a white sticky bg).
+   We want it transparent on top of the body's navy gradient. */
+.site-header {
+  padding: .7rem 0 !important;
+  background: transparent !important;
+  border-bottom: none !important;
+  position: relative !important;
+}
 .site-header .container { display: flex; align-items: center; }
-.site-header .brand-logo { height: 38px; width: auto; filter: brightness(0) invert(1); }
+.site-header .brand-logo { height: 42px; width: auto; }
 
 .fw-hero {
   color: #fff;
