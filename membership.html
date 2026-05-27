@@ -354,24 +354,92 @@ body {
 </footer>
 
 <script>
-// Placeholder click handler — when the user provides Sonny's checkout URLs,
-// fill in data-sonnys-url="..." on each button and this code will redirect.
-document.querySelectorAll('.js-start-membership').forEach(el => {
-  el.addEventListener('click', function(ev) {
-    ev.preventDefault();
-    const url = this.getAttribute('data-sonnys-url') || '';
-    const plan = this.getAttribute('data-plan-name') || 'this plan';
-    const price = this.getAttribute('data-plan-price') || '';
+// Mirror the Pollen page's auto-submit-to-Sonny's pattern:
+//   1. Click a plan card → POST to OUR /api/membership/signup with plate/loc/plan
+//   2. Backend creates the lead row AND calls Sonny's eCommerce API to get a
+//      pendingOrderToken for that plan
+//   3. Backend returns { cart_post: { url, method, fields } }
+//   4. We auto-submit a hidden form to that URL — Sonny's checkout opens with
+//      the cart pre-filled (plan + plate + customer info already attached).
+//
+// This eliminates manual checkout steps. Customer goes from "tap Start" →
+// straight to Sonny's payment form.
+//
+// Plate + location come from the freewash URL params (?plate=…&loc=…)
+// passed through by the Free Wash thank-you state.
+const API_BASE = "https://southern-shine-crm.onrender.com";
+const SIGNUP_ENDPOINT = API_BASE + "/api/membership/signup";
 
-    // Track conversion intent regardless of where we route
+function _readQueryParam(name) {
+  try { return new URLSearchParams(window.location.search).get(name) || ""; }
+  catch (_) { return ""; }
+}
+
+const PREFILL = {
+  plate: _readQueryParam("plate").toUpperCase(),
+  location: _readQueryParam("loc"),
+};
+
+document.querySelectorAll('.js-start-membership').forEach(el => {
+  el.addEventListener('click', async function(ev) {
+    ev.preventDefault();
+    const planSlug = this.getAttribute('data-plan-slug') || '';
+    const planName = this.getAttribute('data-plan-name') || 'this plan';
+    const planPrice = parseFloat(this.getAttribute('data-plan-price') || '0');
+
+    // Track conversion intent regardless of where we route next.
     if (window.fbq) {
-      try { fbq('track', 'InitiateCheckout', { content_name: plan, value: parseFloat(price), currency: 'USD' }); } catch (_) {}
+      try { fbq('track', 'InitiateCheckout', { content_name: planName, value: planPrice, currency: 'USD' }); } catch (_) {}
+    }
+    if (window.gtag) {
+      try { gtag('event', 'begin_checkout', { items: [{ item_name: planName, price: planPrice }] }); } catch (_) {}
     }
 
-    if (url && url.trim()) {
-      window.location.href = url;
-    } else {
-      alert(`Thanks for picking ${plan}! Checkout for this plan is being set up — call us at (864) 263-1077 to start your membership today, or visit any of our 3 locations.`);
+    const originalLabel = this.textContent;
+    this.textContent = 'Opening Sonny’s checkout…';
+    this.style.pointerEvents = 'none';
+
+    // Map our local slug ('good-standard' etc) → existing backend slug.
+    // Backend slugs: ultimate / best / better / good. Strip the '-standard'
+    // suffix so we hit the right entry in PLAN_CATALOG.
+    let backendSlug = planSlug.replace(/-standard.*$/, '');
+
+    try {
+      const res = await fetch(SIGNUP_ENDPOINT, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          plan: backendSlug,
+          license_plate: PREFILL.plate,
+          location: PREFILL.location,
+          source: 'membership_page_post_freewash',
+        }),
+      });
+      const data = await res.json().catch(() => ({}));
+      if (!res.ok || !data.cart_post) {
+        const msg = (data && data.error) || 'We could not start checkout. Please try again or call (864) 263-1077.';
+        alert(msg);
+        this.textContent = originalLabel;
+        this.style.pointerEvents = '';
+        return;
+      }
+      // Auto-submit a hidden POST form to Sonny's storefront /cart/add.
+      const cp = data.cart_post;
+      const f = document.createElement('form');
+      f.method = cp.method || 'POST';
+      f.action = cp.url;
+      f.style.display = 'none';
+      Object.keys(cp.fields || {}).forEach(k => {
+        const inp = document.createElement('input');
+        inp.type = 'hidden'; inp.name = k; inp.value = cp.fields[k];
+        f.appendChild(inp);
+      });
+      document.body.appendChild(f);
+      f.submit();
+    } catch (err) {
+      alert('Network error — check your connection and try again, or call (864) 263-1077.');
+      this.textContent = originalLabel;
+      this.style.pointerEvents = '';
     }
   });
 });
