@@ -4,14 +4,14 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Lock in Unlimited Washes — Greenville | Southern Shine Express</title>
-<meta name="description" content="Your free wash is on its way. Lock in unlimited washes at our Greenville Cedar Lane location — Ultimate, Best, Good, or Basic from $25/mo. Cancel anytime." />
+<meta name="description" content="Your free wash is on its way. Lock in unlimited washes at our Greenville location — Ultimate $37, Best $35, Good $30, or Basic $25/mo. Cancel anytime." />
 <meta name="color-scheme" content="light" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" />
 <link rel="stylesheet" href="style.css" />
 
-<!-- Tracking config (same as Free Wash page) -->
+<!-- Tracking config -->
 <script>
 window.SS_TRACKING_CONFIG = {
   ENABLED: true,
@@ -19,8 +19,6 @@ window.SS_TRACKING_CONFIG = {
   GOOGLE_ADS_TAG_ID: "AW-18036476522",
 };
 </script>
-
-<!-- Meta Pixel -->
 <script>
 (function(){
   if (!window.SS_TRACKING_CONFIG || !window.SS_TRACKING_CONFIG.ENABLED) return;
@@ -33,13 +31,10 @@ window.SS_TRACKING_CONFIG = {
   fbq('track', 'PageView');
 })();
 </script>
-
-<!-- Google gtag -->
 <script>
 (function(){
   if (!window.SS_TRACKING_CONFIG || !window.SS_TRACKING_CONFIG.ENABLED) return;
-  var s = document.createElement('script');
-  s.async = true;
+  var s = document.createElement('script'); s.async = true;
   s.src = 'https://www.googletagmanager.com/gtag/js?id=' + window.SS_TRACKING_CONFIG.GOOGLE_ADS_TAG_ID;
   document.head.appendChild(s);
   window.dataLayer = window.dataLayer || [];
@@ -50,30 +45,25 @@ window.SS_TRACKING_CONFIG = {
 </script>
 
 <style>
-/* Greenville variant — identical styling to membership.html, only the
-   plan grid contents (Basic instead of Better) differ. Any visual tweak
-   should be mirrored across both files. */
+/* Identical CSS to membership.html — keep these two in sync when tweaking */
 html, body { margin: 0; padding: 0; }
 body {
   background: linear-gradient(160deg, #31a3d4 0%, #001f59 100%);
   font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  color: #fff;
-  min-height: 100vh;
+  color: #fff; min-height: 100vh;
 }
 
 .site-header {
-  padding: .7rem 0 !important;
-  background: transparent !important;
-  border-bottom: none !important;
-  position: relative !important;
+  padding: .7rem 0 !important; background: transparent !important;
+  border-bottom: none !important; position: relative !important;
 }
 .site-header .container { display: flex; align-items: center; }
 .site-header .brand-logo { height: 88px; width: auto; }
 @media (max-width: 919px) { .site-header .brand-logo { height: 64px; } }
 
-.container { max-width: 1180px; margin: 0 auto; padding: 0 1.2rem; }
+.container { max-width: 1200px; margin: 0 auto; padding: 0 1.2rem; }
 
-.mb-hero { text-align: center; padding: 1.4rem 0 2.2rem; }
+.mb-hero { text-align: center; padding: 1.2rem 0 2.2rem; }
 .mb-hero-eyebrow {
   display: inline-block; background: #fbe247; color: #001f59;
   padding: .35rem .85rem; border-radius: 999px;
@@ -86,55 +76,131 @@ body {
   margin: 0 0 .8rem; letter-spacing: -.02em;
 }
 .mb-hero h1 .yellow { color: #fbe247; }
-.mb-hero p {
-  font-size: 1.08rem; line-height: 1.5;
-  opacity: .92; margin: 0 auto; max-width: 640px;
-}
+.mb-hero p { font-size: 1.08rem; line-height: 1.5; opacity: .92; margin: 0 auto; max-width: 640px; }
 
-.mb-plans { padding-bottom: 3rem; }
+.mb-plans { padding-bottom: 2.5rem; }
 .mb-plans-grid {
   display: grid; grid-template-columns: 1fr; gap: 1.1rem;
-  max-width: 1080px; margin: 0 auto;
+  max-width: 1180px; margin: 0 auto;
 }
 @media (min-width: 720px) { .mb-plans-grid { grid-template-columns: repeat(2, 1fr); } }
 @media (min-width: 1024px) { .mb-plans-grid { grid-template-columns: repeat(4, 1fr); } }
 
 .mb-plan {
-  background: #fff; color: #0f172a;
-  border-radius: 16px; padding: 1.5rem 1.2rem 1.3rem;
-  box-shadow: 0 14px 38px rgba(0, 31, 89, 0.32);
+  background: linear-gradient(180deg, #ffffff 0%, #f6f8fb 100%);
+  color: #0f172a; border-radius: 18px;
+  padding: 1.6rem 1.35rem 1.4rem;
+  box-shadow: 0 16px 40px rgba(0, 31, 89, 0.34);
   display: flex; flex-direction: column;
-  position: relative;
-  transition: transform .15s, box-shadow .2s;
+  position: relative; overflow: visible;
+  transition: transform .15s ease, box-shadow .2s ease;
 }
-.mb-plan:hover { transform: translateY(-3px); box-shadow: 0 20px 46px rgba(0, 31, 89, 0.40); }
-.mb-plan.featured { background: #fff; outline: 3px solid #fbe247; outline-offset: -3px; }
+.mb-plan:hover { transform: translateY(-4px); box-shadow: 0 24px 52px rgba(0, 31, 89, 0.42); }
+
+.mb-plan::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0;
+  height: 6px; border-radius: 18px 18px 0 0;
+  background: #c7cfdd;
+}
+.mb-plan.tier-ultimate::before { background: linear-gradient(90deg, #fbe247 0%, #f5b813 100%); }
+.mb-plan.tier-best::before     { background: linear-gradient(90deg, #88b6e7 0%, #31a3d4 100%); }
+.mb-plan.tier-good::before     { background: linear-gradient(90deg, #4ade80 0%, #16a34a 100%); }
+.mb-plan.tier-basic::before    { background: linear-gradient(90deg, #cbd5e1 0%, #94a3b8 100%); }
+
+.mb-plan.featured {
+  outline: 3px solid #fbe247; outline-offset: -3px;
+  background: linear-gradient(180deg, #fffef5 0%, #fff8d8 100%);
+}
+
 .mb-plan-badge {
-  position: absolute; top: -.6rem; right: 1rem;
+  position: absolute; top: -.7rem; right: 1rem;
   background: #fbe247; color: #001f59;
-  padding: .25rem .65rem; border-radius: 999px;
+  padding: .3rem .75rem; border-radius: 999px;
   font-size: .68rem; font-weight: 800; letter-spacing: .04em;
   text-transform: uppercase;
+  box-shadow: 0 4px 10px rgba(251, 226, 71, .45);
 }
-.mb-plan h3 { margin: 0 0 .35rem; font-size: 1.25rem; color: #001f59; font-weight: 800; }
-.mb-plan .price { margin: .35rem 0 .8rem; font-size: 1.05rem; }
-.mb-plan .price .amount { font-size: 2.1rem; font-weight: 900; color: #001f59; letter-spacing: -.02em; }
-.mb-plan .price .per { font-size: .9rem; color: #5b6678; margin-left: .15rem; }
-.mb-plan .who { font-size: .87rem; color: #5b6678; margin: 0 0 .9rem; line-height: 1.4; min-height: 2.5em; }
-.mb-plan ul { list-style: none; padding: 0; margin: 0 0 1.1rem; font-size: .9rem; line-height: 1.5; flex-grow: 1; }
-.mb-plan ul li { padding-left: 1.4rem; position: relative; margin-bottom: .25rem; }
-.mb-plan ul li::before { content: '✓'; position: absolute; left: 0; top: 0; color: #31a3d4; font-weight: 900; }
+.mb-plan-badge.badge-save {
+  background: #4ade80; color: #052e16;
+  box-shadow: 0 4px 10px rgba(74, 222, 128, .35);
+}
+.mb-plan-badge.badge-loc {
+  background: #88b6e7; color: #001f59;
+  box-shadow: 0 4px 10px rgba(136, 182, 231, .45);
+}
+
+.mb-plan .tier-icon {
+  width: 56px; height: 56px; margin: .2rem 0 .6rem;
+  display: flex; align-items: center; justify-content: center;
+}
+.mb-plan .tier-icon img { max-width: 100%; max-height: 100%; }
+
+.mb-plan h3 {
+  margin: 0 0 .15rem; font-size: 1.35rem;
+  color: #001f59; font-weight: 800; letter-spacing: -.01em;
+}
+.mb-plan .headline {
+  font-size: .82rem; color: #5b6678; margin: 0 0 .9rem;
+  font-weight: 600; text-transform: uppercase; letter-spacing: .05em;
+}
+
+.mb-plan .price-row {
+  display: flex; align-items: baseline; gap: .5rem;
+  margin: 0 0 .35rem;
+}
+.mb-plan .price-row .was {
+  text-decoration: line-through; color: #94a3b8;
+  font-size: 1rem; font-weight: 600;
+}
+.mb-plan .price-row .amount {
+  font-size: 2.6rem; font-weight: 900;
+  color: #001f59; letter-spacing: -.03em; line-height: 1;
+}
+.mb-plan .price-row .per {
+  font-size: .9rem; color: #5b6678; font-weight: 500;
+}
+.mb-plan .save-line {
+  font-size: .8rem; color: #16a34a; font-weight: 700;
+  margin: 0 0 1rem; letter-spacing: .02em;
+}
+.mb-plan .save-line.placeholder { color: transparent; user-select: none; }
+
+.mb-plan .who {
+  font-size: .9rem; color: #475569;
+  margin: 0 0 1rem; line-height: 1.5; min-height: 2.7em;
+}
+
+.mb-plan ul {
+  list-style: none; padding: 0; margin: 0 0 1.2rem;
+  font-size: .92rem; line-height: 1.55; flex-grow: 1;
+}
+.mb-plan ul li {
+  padding-left: 1.5rem; position: relative;
+  margin-bottom: .3rem; color: #0f172a;
+}
+.mb-plan ul li::before {
+  content: '✓'; position: absolute; left: 0; top: 0;
+  color: #31a3d4; font-weight: 900; font-size: 1rem;
+}
+.mb-plan.featured ul li::before { color: #f5b813; }
+
 .mb-plan .cta {
   display: block; text-align: center;
   background: #fbe247; color: #001f59;
-  padding: 12px 16px; border-radius: 11px;
-  font-size: .95rem; font-weight: 800;
+  padding: 14px 18px; border-radius: 12px;
+  font-size: 1rem; font-weight: 800;
   text-decoration: none; cursor: pointer;
   border: none; font-family: inherit; width: 100%;
   transition: transform .1s, box-shadow .15s;
 }
-.mb-plan .cta:hover { transform: translateY(-1px); box-shadow: 0 6px 14px rgba(251, 226, 71, .35); }
-.mb-plan .fineprint { font-size: .72rem; color: #9ca3af; text-align: center; margin: .6rem 0 0; }
+.mb-plan .cta:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 14px rgba(251, 226, 71, .45);
+}
+.mb-plan .fineprint {
+  font-size: .72rem; color: #9ca3af;
+  text-align: center; margin: .7rem 0 0;
+}
 
 .mb-reassure {
   background: rgba(255, 255, 255, .07);
@@ -181,77 +247,18 @@ body {
     <div class="container">
       <div class="mb-plans-grid">
 
-        <!-- BASIC (Greenville-only) -->
-        <article class="mb-plan">
-          <h3>Basic</h3>
-          <p class="price"><span class="amount">$25</span><span class="per">/mo</span></p>
-          <p class="who">A simple, fast wash for everyday driving.</p>
-          <ul>
-            <li>Soft-touch wash</li>
-            <li>Spot-free rinse</li>
-            <li>Tire shine</li>
-          </ul>
-          <!--
-            TODO: replace data-sonnys-url="" with the Sonny's checkout URL for
-                  the Basic plan (Greenville only, $25/mo). Greenville offers
-                  this tier; Travelers Rest and Spartanburg do not.
-          -->
-          <a href="#" class="cta js-start-membership"
-             data-plan-slug="basic-standard-greenville"
-             data-plan-name="Basic"
-             data-plan-price="25"
-             data-plan-location="CEDAR"
-             data-sonnys-url="">Start Basic Membership</a>
-          <p class="fineprint">Secure payment · Cancel anytime</p>
-        </article>
-
-        <!-- GOOD -->
-        <article class="mb-plan">
-          <h3>Good</h3>
-          <p class="price"><span class="amount">$30</span><span class="per">/mo</span></p>
-          <p class="who">A reliable wash with bug prep for the daily driver.</p>
-          <ul>
-            <li>Soft-touch wash</li>
-            <li>Spot-free rinse</li>
-            <li>Tire shine</li>
-            <li>Bug prep</li>
-          </ul>
-          <a href="#" class="cta js-start-membership"
-             data-plan-slug="good-standard-greenville"
-             data-plan-name="Good"
-             data-plan-price="30"
-             data-plan-location="CEDAR"
-             data-sonnys-url="">Start Good Membership</a>
-          <p class="fineprint">Secure payment · Cancel anytime</p>
-        </article>
-
-        <!-- BEST -->
-        <article class="mb-plan">
-          <h3>Best</h3>
-          <p class="price"><span class="amount">$35</span><span class="per">/mo</span></p>
-          <p class="who">Spot-free finish with ceramic protection for weekly drivers.</p>
-          <ul>
-            <li>Ceramic Shine</li>
-            <li>Shine Shield Paint Seal</li>
-            <li>Tire Shine · Wheel Clean</li>
-            <li>Underbody Rinse</li>
-            <li>Bug Prep · Rain Repellent</li>
-          </ul>
-          <a href="#" class="cta js-start-membership"
-             data-plan-slug="best-standard-greenville"
-             data-plan-name="Best"
-             data-plan-price="35"
-             data-plan-location="CEDAR"
-             data-sonnys-url="">Start Best Membership</a>
-          <p class="fineprint">Secure payment · Cancel anytime</p>
-        </article>
-
-        <!-- ULTIMATE (featured) -->
-        <article class="mb-plan featured">
+        <!-- ───────── ULTIMATE — most expensive on LEFT ───────── -->
+        <article class="mb-plan featured tier-ultimate">
           <span class="mb-plan-badge">Most Popular</span>
-          <h3>Ultimate Graphene</h3>
-          <p class="price"><span class="amount">$37</span><span class="per">/mo</span></p>
-          <p class="who">Our longest-lasting protection with our highest shine.</p>
+          <div class="tier-icon"><img src="images/graphene-icon.png" alt="Graphene Armor Coating" /></div>
+          <h3>Ultimate</h3>
+          <p class="headline">Graphene Armor</p>
+          <p class="price-row">
+            <span class="was">$45</span>
+            <span class="amount">$37</span><span class="per">/mo</span>
+          </p>
+          <p class="save-line">Save $8/mo · limited time</p>
+          <p class="who">Our longest-lasting protection with our highest level of shine and durability — graphene + ceramic + hot wax.</p>
           <ul>
             <li>Graphene Armor Coating (x4)</li>
             <li>Shine Shield Paint Seal</li>
@@ -262,11 +269,74 @@ body {
             <li>Hot Wax</li>
           </ul>
           <a href="#" class="cta js-start-membership"
-             data-plan-slug="ultimate-standard-greenville"
-             data-plan-name="Ultimate Graphene"
-             data-plan-price="37"
-             data-plan-location="CEDAR"
-             data-sonnys-url="">Start Ultimate Membership</a>
+             data-plan-slug="ultimate-off" data-plan-name="Ultimate Plan" data-plan-price="37">Start Ultimate Membership</a>
+          <p class="fineprint">Secure payment · Cancel anytime</p>
+        </article>
+
+        <!-- ───────── BEST ───────── -->
+        <article class="mb-plan tier-best">
+          <span class="mb-plan-badge badge-save">Save $5</span>
+          <div class="tier-icon"><img src="images/ceramic-icon.png" alt="Ceramic Shine" /></div>
+          <h3>Best</h3>
+          <p class="headline">Ceramic Shine</p>
+          <p class="price-row">
+            <span class="was">$40</span>
+            <span class="amount">$35</span><span class="per">/mo</span>
+          </p>
+          <p class="save-line">Save $5/mo · limited time</p>
+          <p class="who">Spot-free finish with ceramic protection. Perfect for weekly drivers who want that just-detailed look.</p>
+          <ul>
+            <li>Ceramic Shine</li>
+            <li>Shine Shield Paint Seal</li>
+            <li>Tire Shine · Wheel Clean</li>
+            <li>Underbody Rinse</li>
+            <li>Bug Prep · Rain Repellent</li>
+            <li>Hot Wax</li>
+          </ul>
+          <a href="#" class="cta js-start-membership"
+             data-plan-slug="best-off" data-plan-name="Best Plan" data-plan-price="35">Start Best Membership</a>
+          <p class="fineprint">Secure payment · Cancel anytime</p>
+        </article>
+
+        <!-- ───────── GOOD ───────── -->
+        <article class="mb-plan tier-good">
+          <div class="tier-icon"><img src="images/hot-wax-icon.png" alt="Hot Wax" /></div>
+          <h3>Good</h3>
+          <p class="headline">Hot Wax</p>
+          <p class="price-row">
+            <span class="amount">$30</span><span class="per">/mo</span>
+          </p>
+          <p class="save-line placeholder">_</p>
+          <p class="who">Reliable everyday wash with hot wax and bug prep. The daily driver's go-to.</p>
+          <ul>
+            <li>Hot Wax</li>
+            <li>Tire Shine · Wheel Clean</li>
+            <li>Underbody Rinse</li>
+            <li>Bug Prep · Rain Repellent</li>
+          </ul>
+          <a href="#" class="cta js-start-membership"
+             data-plan-slug="good" data-plan-name="Good Plan" data-plan-price="30">Start Good Membership</a>
+          <p class="fineprint">Secure payment · Cancel anytime</p>
+        </article>
+
+        <!-- ───────── BASIC — cheapest on RIGHT, Greenville-only ───────── -->
+        <article class="mb-plan tier-basic">
+          <span class="mb-plan-badge badge-loc">Greenville</span>
+          <div class="tier-icon"><img src="images/hot-wax-icon.png" alt="Quick Wash" style="opacity:.55;" /></div>
+          <h3>Basic</h3>
+          <p class="headline">Quick &amp; Simple</p>
+          <p class="price-row">
+            <span class="amount">$25</span><span class="per">/mo</span>
+          </p>
+          <p class="save-line placeholder">_</p>
+          <p class="who">A simple soft-touch wash with spot-free rinse. Great for first-time members easing in.</p>
+          <ul>
+            <li>Soft-touch wash</li>
+            <li>Spot-free rinse</li>
+            <li>Tire Shine</li>
+          </ul>
+          <a href="#" class="cta js-start-membership"
+             data-plan-slug="basic" data-plan-name="Basic Plan" data-plan-price="25">Start Basic Membership</a>
           <p class="fineprint">Secure payment · Cancel anytime</p>
         </article>
 
@@ -303,10 +373,6 @@ body {
 </footer>
 
 <script>
-// Same auto-submit-to-Sonny's pattern as membership.html — see comments there.
-// Greenville variant has the same 'ultimate'/'best'/'good' slugs that map to
-// the backend PLAN_CATALOG. The 'basic' slug is Greenville-only and is NOT
-// yet in PLAN_CATALOG (TODO: user to provide Sonny's plan_id for $25 Basic).
 const API_BASE = "https://southern-shine-crm.onrender.com";
 const SIGNUP_ENDPOINT = API_BASE + "/api/membership/signup";
 
@@ -317,13 +383,13 @@ function _readQueryParam(name) {
 
 const PREFILL = {
   plate: _readQueryParam("plate").toUpperCase(),
-  location: _readQueryParam("loc") || "CEDAR",  // default — this is the Greenville page
+  location: _readQueryParam("loc") || "CEDAR",
 };
 
 document.querySelectorAll('.js-start-membership').forEach(el => {
   el.addEventListener('click', async function(ev) {
     ev.preventDefault();
-    const planSlug = this.getAttribute('data-plan-slug') || '';
+    const backendSlug = this.getAttribute('data-plan-slug') || '';
     const planName = this.getAttribute('data-plan-name') || 'this plan';
     const planPrice = parseFloat(this.getAttribute('data-plan-price') || '0');
 
@@ -338,10 +404,6 @@ document.querySelectorAll('.js-start-membership').forEach(el => {
     this.textContent = 'Opening Sonny’s checkout…';
     this.style.pointerEvents = 'none';
 
-    // Greenville slugs end with '-standard-greenville' — strip to get the
-    // backend slug ('ultimate', 'best', 'good', 'basic').
-    let backendSlug = planSlug.replace(/-standard-greenville.*$/, '');
-
     try {
       const res = await fetch(SIGNUP_ENDPOINT, {
         method: 'POST',
@@ -349,7 +411,7 @@ document.querySelectorAll('.js-start-membership').forEach(el => {
         body: JSON.stringify({
           plan: backendSlug,
           license_plate: PREFILL.plate,
-          location: PREFILL.location || 'CEDAR',
+          location: PREFILL.location,
           source: 'membership_page_post_freewash_greenville',
         }),
       });
