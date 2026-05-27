@@ -472,15 +472,20 @@ body { background: linear-gradient(160deg, #31a3d4 0%, #001f59 100%); }
         }
       } catch (_) {}
 
-      // Variant: "resent_existing" / "already_redeemed" reword the message
+      // Reword the thank-you message based on backend status.
+      // HARD RULE (2026-05-27): one free wash per customer — we never re-send
+      // the MMS or burn another code from inventory on a duplicate signup.
       const titleEl = document.getElementById("fw-thanks-title");
       const bodyEl = document.getElementById("fw-thanks-body");
       if (data.status === "already_redeemed") {
         titleEl.textContent = "Looks like you already claimed one!";
         bodyEl.textContent = data.message || "Thanks for visiting Southern Shine. Keep an eye on your phone for member-only offers.";
-      } else if (data.status === "resent_existing") {
-        titleEl.textContent = "Resent your code!";
-        bodyEl.textContent = "We already had a code for you — just texted it again. Check your phone.";
+      } else if (data.status === "already_has_code") {
+        titleEl.textContent = "You're already in!";
+        bodyEl.textContent = data.message || "Check your phone — we sent your code earlier. If you can't find it, contact info@southernshineexpresswash.com.";
+      } else if (data.status === "already_used_entitlement") {
+        titleEl.textContent = "One per customer";
+        bodyEl.textContent = data.message || "You've already signed up. Keep an eye on your phone for member-only offers and seasonal promotions!";
       }
     } catch (err) {
       errorEl.textContent = "Network error. Check your connection and try again.";
