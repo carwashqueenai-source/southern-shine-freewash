@@ -200,22 +200,26 @@ body { background: linear-gradient(160deg, #31a3d4 0%, #001f59 100%); }
   text-decoration: none; font-weight: 700; font-size: .95rem;
 }
 
-/* Footer (minimal, single line) */
+/* Footer (minimal, single line — intentionally low contrast / "barely there") */
 .site-footer {
   background: rgba(0, 0, 0, .15);
   padding: .7rem 0;
-  color: rgba(255, 255, 255, .65);
+  color: rgba(255, 255, 255, .55);
   font-size: .72rem;
   text-align: center;
 }
-/* Force footer link font-size/color to match the surrounding text
-   (style.css forces .9rem #c7cfdd which makes them larger + lighter). */
-.site-footer a {
-  color: inherit !important;
-  font-size: inherit !important;
+/* Footer links MUST look identical to the surrounding copyright text.
+   Hard-code every property (no inherit) so browser user-agent styles +
+   style.css both lose the cascade fight. */
+.site-footer a,
+.site-footer a:link,
+.site-footer a:visited {
+  color: rgba(255, 255, 255, .55) !important;
+  font-size: .72rem !important;
   font-family: inherit !important;
-  font-weight: inherit !important;
+  font-weight: 400 !important;
   text-decoration: none !important;
+  letter-spacing: 0 !important;
 }
 .site-footer a:hover { text-decoration: underline !important; }
 
