@@ -480,12 +480,16 @@ body { background: linear-gradient(160deg, #31a3d4 0%, #001f59 100%); }
       if (data.status === "already_redeemed") {
         titleEl.textContent = "Looks like you already claimed one!";
         bodyEl.textContent = data.message || "Thanks for visiting Southern Shine. Keep an eye on your phone for member-only offers.";
-      } else if (data.status === "already_has_code") {
-        titleEl.textContent = "You're already in!";
-        bodyEl.textContent = data.message || "Check your phone — we sent your code earlier. If you can't find it, contact info@southernshineexpresswash.com.";
-      } else if (data.status === "already_used_entitlement") {
+      } else if (data.status === "already_has_code" || data.status === "already_used_entitlement") {
+        // HARD RULE 2026-05-27 — DO NOT tell the customer to check
+        // their phone for a prior code. Codes don't truly expire in
+        // our inventory but we display a 7-day expiry as a marketing
+        // nudge; pointing the customer at the old code risks (a) a
+        // failed scan at the gate (code already redeemed) or (b) a
+        // day-9 walk-in with "but the text said 7 days." Steer them
+        // at member-only offers instead.
         titleEl.textContent = "One per customer";
-        bodyEl.textContent = data.message || "You've already signed up. Keep an eye on your phone for member-only offers and seasonal promotions!";
+        bodyEl.textContent = data.message || "Looks like you've already signed up. We can only offer one free wash per person — keep an eye on your phone for member-only offers and seasonal promotions! We look forward to seeing you at Southern Shine Car Wash.";
       }
     } catch (err) {
       errorEl.textContent = "Network error. Check your connection and try again.";
