@@ -139,16 +139,16 @@ body {
   box-shadow: 0 4px 10px rgba(74, 222, 128, .35);
 }
 
-/* Title row — icon next to plan name (set 2026-05-27 per Alex: "icons
-   for each Package need to go next to the package name. it looks bad
-   right now"). Icon shrinks from 56x56 to 40x40 to keep the row compact
-   without overpowering the name. */
+/* Title row — icon next to plan name. Sizes bumped 2026-05-28 per Alex
+   ("make the wash package titles and icons bigger"). Icon 40→64px,
+   heading 1.35→1.9rem. Gap widened to .8rem so the larger pieces
+   breathe. */
 .mb-plan .mb-plan-title-row {
-  display: flex; align-items: center; gap: .55rem;
-  margin: .2rem 0 .15rem;
+  display: flex; align-items: center; gap: .8rem;
+  margin: .2rem 0 .35rem;
 }
 .mb-plan .mb-plan-title-row .tier-icon {
-  width: 40px; height: 40px; margin: 0;
+  width: 64px; height: 64px; margin: 0;
   display: flex; align-items: center; justify-content: center;
   flex-shrink: 0;
 }
@@ -156,14 +156,14 @@ body {
 
 .mb-plan .mb-plan-title-row h3 {
   margin: 0;
-  font-size: 1.35rem; color: #001f59; font-weight: 800;
-  letter-spacing: -.01em;
+  font-size: 1.9rem; color: #001f59; font-weight: 800;
+  letter-spacing: -.015em; line-height: 1.1;
 }
 .mb-plan h3 {
   /* Legacy fallback for any h3 not yet wrapped in a title row */
   margin: 0 0 .15rem;
-  font-size: 1.35rem; color: #001f59; font-weight: 800;
-  letter-spacing: -.01em;
+  font-size: 1.9rem; color: #001f59; font-weight: 800;
+  letter-spacing: -.015em;
 }
 .mb-plan .headline {
   font-size: .82rem;
@@ -190,19 +190,6 @@ body {
 .mb-plan .price-row .per {
   font-size: .9rem; color: #5b6678; font-weight: 500;
 }
-.mb-plan .save-line {
-  font-size: .8rem; color: #16a34a; font-weight: 700;
-  margin: 0 0 1rem;
-  letter-spacing: .02em;
-}
-.mb-plan .save-line.placeholder { color: transparent; user-select: none; }
-
-.mb-plan .who {
-  font-size: .9rem; color: #475569;
-  margin: 0 0 1rem; line-height: 1.5;
-  min-height: 2.7em;
-}
-
 .mb-plan ul {
   list-style: none; padding: 0; margin: 0 0 1.2rem;
   font-size: .92rem; line-height: 1.55;
@@ -294,8 +281,6 @@ body {
             <span class="was">$45</span>
             <span class="amount">$37</span><span class="per">/mo</span>
           </p>
-          <p class="save-line">Save $8/mo · limited time</p>
-          <p class="who">Our longest-lasting protection with our highest level of shine and durability — graphene + ceramic + hot wax.</p>
           <ul>
             <li>Graphene Armor Coating (x4)</li>
             <li>Shine Shield Paint Seal</li>
@@ -322,8 +307,6 @@ body {
             <span class="was">$40</span>
             <span class="amount">$35</span><span class="per">/mo</span>
           </p>
-          <p class="save-line">Save $5/mo · limited time</p>
-          <p class="who">Spot-free finish with ceramic protection. Perfect for weekly drivers who want that just-detailed look.</p>
           <ul>
             <li>Ceramic Shine</li>
             <li>Shine Shield Paint Seal</li>
@@ -349,8 +332,6 @@ body {
             <span class="was">$35</span>
             <span class="amount">$32</span><span class="per">/mo</span>
           </p>
-          <p class="save-line">Save $3/mo · limited time</p>
-          <p class="who">Paint sealant + bug prep + hot wax. The sweet spot for commuters who want lasting shine.</p>
           <ul>
             <li>Shine Shield Paint Seal</li>
             <li>Hot Wax</li>
@@ -373,8 +354,6 @@ body {
           <p class="price-row">
             <span class="amount">$30</span><span class="per">/mo</span>
           </p>
-          <p class="save-line placeholder">_</p>
-          <p class="who">Reliable everyday wash with hot wax and bug prep. The daily driver's go-to.</p>
           <ul>
             <li>Hot Wax</li>
             <li>Tire Shine · Wheel Clean</li>
