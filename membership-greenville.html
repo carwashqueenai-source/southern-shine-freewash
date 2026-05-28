@@ -129,13 +129,24 @@ body {
   box-shadow: 0 4px 10px rgba(136, 182, 231, .45);
 }
 
-.mb-plan .tier-icon {
-  width: 56px; height: 56px; margin: .2rem 0 .6rem;
+/* Title row — icon next to plan name (set 2026-05-27 per Alex). */
+.mb-plan .mb-plan-title-row {
+  display: flex; align-items: center; gap: .55rem;
+  margin: .2rem 0 .15rem;
+}
+.mb-plan .mb-plan-title-row .tier-icon {
+  width: 40px; height: 40px; margin: 0;
   display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
 }
 .mb-plan .tier-icon img { max-width: 100%; max-height: 100%; }
 
+.mb-plan .mb-plan-title-row h3 {
+  margin: 0;
+  font-size: 1.35rem; color: #001f59; font-weight: 800; letter-spacing: -.01em;
+}
 .mb-plan h3 {
+  /* Legacy fallback if any h3 isn't wrapped in a title row */
   margin: 0 0 .15rem; font-size: 1.35rem;
   color: #001f59; font-weight: 800; letter-spacing: -.01em;
 }
@@ -250,8 +261,10 @@ body {
         <!-- ───────── ULTIMATE — most expensive on LEFT ───────── -->
         <article class="mb-plan featured tier-ultimate">
           <span class="mb-plan-badge">Most Popular</span>
-          <div class="tier-icon"><img src="images/graphene-icon.png" alt="Graphene Armor Coating" /></div>
-          <h3>Ultimate</h3>
+          <div class="mb-plan-title-row">
+            <div class="tier-icon"><img src="images/graphene-icon.png" alt="Graphene Armor Coating" /></div>
+            <h3>Ultimate</h3>
+          </div>
           <p class="headline">Graphene Armor</p>
           <p class="price-row">
             <span class="was">$45</span>
@@ -276,8 +289,10 @@ body {
         <!-- ───────── BEST ───────── -->
         <article class="mb-plan tier-best">
           <span class="mb-plan-badge badge-save">Save $5</span>
-          <div class="tier-icon"><img src="images/ceramic-icon.png" alt="Ceramic Shine" /></div>
-          <h3>Best</h3>
+          <div class="mb-plan-title-row">
+            <div class="tier-icon"><img src="images/ceramic-icon.png" alt="Ceramic Shine" /></div>
+            <h3>Best</h3>
+          </div>
           <p class="headline">Ceramic Shine</p>
           <p class="price-row">
             <span class="was">$40</span>
@@ -300,8 +315,10 @@ body {
 
         <!-- ───────── GOOD ───────── -->
         <article class="mb-plan tier-good">
-          <div class="tier-icon"><img src="images/hot-wax-icon.png" alt="Hot Wax" /></div>
-          <h3>Good</h3>
+          <div class="mb-plan-title-row">
+            <div class="tier-icon"><img src="images/hot-wax-icon.png" alt="Hot Wax" /></div>
+            <h3>Good</h3>
+          </div>
           <p class="headline">Hot Wax</p>
           <p class="price-row">
             <span class="amount">$30</span><span class="per">/mo</span>
@@ -322,8 +339,10 @@ body {
         <!-- ───────── BASIC — cheapest on RIGHT, Greenville-only ───────── -->
         <article class="mb-plan tier-basic">
           <span class="mb-plan-badge badge-loc">Greenville</span>
-          <div class="tier-icon"><img src="images/hot-wax-icon.png" alt="Quick Wash" style="opacity:.55;" /></div>
-          <h3>Basic</h3>
+          <div class="mb-plan-title-row">
+            <div class="tier-icon"><img src="images/hot-wax-icon.png" alt="Quick Wash" style="opacity:.55;" /></div>
+            <h3>Basic</h3>
+          </div>
           <p class="headline">Quick &amp; Simple</p>
           <p class="price-row">
             <span class="amount">$25</span><span class="per">/mo</span>
