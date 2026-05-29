@@ -139,16 +139,18 @@ body {
   box-shadow: 0 4px 10px rgba(74, 222, 128, .35);
 }
 
-/* Title row — icon next to plan name. Sizes bumped 2026-05-28 per Alex
-   ("make the wash package titles and icons bigger"). Icon 40→64px,
-   heading 1.35→1.9rem. Gap widened to .8rem so the larger pieces
-   breathe. */
+/* Title row — heading on top, icon stacked underneath. Reordered
+   2026-05-29 per Alex ("the icon maybe underneath the name of the
+   wash"). Icon shrunk 64→52px since it's now a supporting visual,
+   not the lead. align-items: flex-start = left-justified to match
+   the rest of the card content (price, checklist, CTA). */
 .mb-plan .mb-plan-title-row {
-  display: flex; align-items: center; gap: .8rem;
-  margin: .2rem 0 .35rem;
+  display: flex; flex-direction: column; align-items: flex-start;
+  gap: .3rem;
+  margin: .2rem 0 .5rem;
 }
 .mb-plan .mb-plan-title-row .tier-icon {
-  width: 64px; height: 64px; margin: 0;
+  width: 52px; height: 52px; margin: 0;
   display: flex; align-items: center; justify-content: center;
   flex-shrink: 0;
 }
@@ -265,8 +267,8 @@ body {
         <article class="mb-plan featured tier-ultimate">
           <span class="mb-plan-badge">Most Popular</span>
           <div class="mb-plan-title-row">
-            <div class="tier-icon"><img src="images/graphene-icon.png" alt="Graphene Armor Coating" /></div>
             <h3>Ultimate</h3>
+            <div class="tier-icon"><img src="images/graphene-icon.png" alt="Graphene Armor Coating" /></div>
           </div>
           <p class="price-row">
             <span class="was">$45</span>
@@ -290,8 +292,8 @@ body {
         <article class="mb-plan tier-best">
           <span class="mb-plan-badge badge-save">Save $5</span>
           <div class="mb-plan-title-row">
-            <div class="tier-icon"><img src="images/ceramic-icon.png" alt="Ceramic Shine" /></div>
             <h3>Best</h3>
+            <div class="tier-icon"><img src="images/ceramic-icon.png" alt="Ceramic Shine" /></div>
           </div>
           <p class="price-row">
             <span class="was">$40</span>
@@ -314,8 +316,8 @@ body {
         <article class="mb-plan tier-better">
           <span class="mb-plan-badge badge-save">Save $3</span>
           <div class="mb-plan-title-row">
-            <div class="tier-icon"><img src="images/shine-shield-icon.png" alt="Shine Shield Paint Seal" /></div>
             <h3>Better</h3>
+            <div class="tier-icon"><img src="images/shine-shield-icon.png" alt="Shine Shield Paint Seal" /></div>
           </div>
           <p class="price-row">
             <span class="was">$35</span>
@@ -336,8 +338,8 @@ body {
         <!-- ───────── GOOD — cheapest on RIGHT ───────── -->
         <article class="mb-plan tier-good">
           <div class="mb-plan-title-row">
-            <div class="tier-icon"><img src="images/hot-wax-icon.png" alt="Hot Wax" /></div>
             <h3>Good</h3>
+            <div class="tier-icon"><img src="images/hot-wax-icon.png" alt="Hot Wax" /></div>
           </div>
           <p class="price-row">
             <span class="amount">$30</span><span class="per">/mo</span>
