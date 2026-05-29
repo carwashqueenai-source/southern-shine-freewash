@@ -147,6 +147,12 @@ body {
   font-size: 1.9rem; color: #001f59; font-weight: 800;
   letter-spacing: -.015em; line-height: 1.1;
 }
+/* Basic tier has no icon — pad the title row vertically so its h3
+   sits at the same baseline as the other 3 cards' h3s (which are
+   pushed down by the 64px icon next to them). Set 2026-05-29 per Alex. */
+.mb-plan .mb-plan-title-row.mb-plan-title-row-noicon {
+  min-height: 64px;
+}
 .mb-plan h3 {
   /* Legacy fallback if any h3 isn't wrapped in a title row */
   margin: 0 0 .15rem; font-size: 1.9rem;
@@ -324,8 +330,7 @@ body {
         <!-- ───────── BASIC — cheapest on RIGHT, Greenville-only ───────── -->
         <article class="mb-plan tier-basic">
           <span class="mb-plan-badge badge-loc">Greenville</span>
-          <div class="mb-plan-title-row">
-            <div class="tier-icon"><img src="images/hot-wax-icon.png" alt="Quick Wash" style="opacity:.55;" /></div>
+          <div class="mb-plan-title-row mb-plan-title-row-noicon">
             <h3>Basic</h3>
           </div>
           <p class="headline">Quick &amp; Simple</p>
